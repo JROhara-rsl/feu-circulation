@@ -14,8 +14,20 @@ body {
 }
 
 #feu-vert.active path   {    fill: var(--color-vert)!important; }
-#feu-orange.active path {    fill: var(--color-orange)!important; }
 #feu-rouge.active  path {    fill: var(--color-rouge)!important;    }
+#feu-orange.active path {    fill: var(--color-orange)!important; animation: 0.4s infinite clignotement; }
+
+@keyframes clignotement {
+    0% {
+        opacity: 1;
+      }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+      }
+}
 
 section {
     position: absolute;
@@ -41,7 +53,7 @@ section .container {
     width: 150px;
     height: 150px;
     fill: white;
-    background-color: rgb(12,18,83);
+    background-color: var(--color-base);
     border-radius: 60px;
     padding: 10px;
     transition: transform 0.2s ease, 
@@ -54,7 +66,7 @@ section .container {
 }
 
 .picto.active {
-    fill: rgb(113,227,175);
+    fill: var(--color-vert);
 }
 
 #background {

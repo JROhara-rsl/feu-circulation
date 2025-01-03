@@ -57,17 +57,17 @@ function activeCouleur() {
         onVert = false;
         onOrange = true;
         onRouge = false;
-        chrono = 2000;
+        chrono = 3000;
     } else if (tabFeu[1] == 1) {
         onVert = true;
         onOrange = false;
         onRouge = false;
-        chrono = 700;
+        chrono = 1300;
     } else if (tabFeu[2] == 1) {
         onVert = false;
         onOrange = false;
         onRouge = true;
-        chrono = 2000;
+        chrono = 3000;
     }
 }
 
