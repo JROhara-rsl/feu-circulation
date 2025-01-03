@@ -1,3 +1,18 @@
+:root { 
+	--color-base: rgb(12,18,83);
+    --color-vert: rgb(113,227,175);
+    --color-orange: rgb(242,239,175);
+    --color-rouge: rgb(185,25,87);
+}
+
 body {
     margin: 0;
 }
+
+.feux path {
+    fill: var(--color-base) !important;
+}
+
+#feu-vert.active path   {    fill: var(--color-vert)!important; }
+#feu-orange.active path {    fill: var(--color-orange)!important; }
+#feu-rouge.active  path {    fill: var(--color-rouge)!important;    }
