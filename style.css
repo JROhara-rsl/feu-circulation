@@ -41,7 +41,8 @@ section {
 
 section .container {
     width: 500px;
-    height: 400px;
+    height: 600px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -75,5 +76,54 @@ section .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+}
+
+#background .container {
+    width: 100%;
+}
+
+#background svg {
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+header {
+    max-width: 200px;
+}
+
+h1 {
+    font-family: 'Space Mono', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    margin: 0;
+}
+
+h1 span:nth-child(1) {    color: var(--color-rouge);    }
+h1 span:nth-child(2) {    color: var(--color-orange);    }
+h1 span:nth-child(3) {    color: var(--color-vert);    }
+
+/* /////////////////////////////////////////////// PORTRAIT //////////////// */
+
+@media (orientation: portrait) {
+    #background .container {
+        width: auto;
+    }
+}   
+
+/* /////////////////////////////////////////////// 980px //////////////// */
+@media only screen and (max-width: 980px) {
+    .picto {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* /////////////////////////////////////////////// 640px //////////////// */
+@media only screen and (max-width: 640px) {
+    .picto {
+        width: 100px;
+        height: 100px;
+    }
 }
