@@ -68,8 +68,9 @@ function feuAuto() {
 feuAuto();
 
 
-// 4 - Bouton manuel 
+// 4 - Les boutons manuel et automatique 
 const buttonNext = document.getElementById('next');
+const buttonAuto = document.getElementById('auto');
 
 buttonNext.addEventListener('click', function(event) {
     // - On  désactive le mode auto
@@ -83,14 +84,21 @@ buttonNext.addEventListener('click', function(event) {
     // - On réactive les fonctions
     activeCouleur();
     feuAttribuer();
+
+    // - Ajouter et supprimer la class active des bouttons
+    buttonNext.classList.add("active");
+    buttonAuto.classList.remove("active");
 });
-
-
-// 5 - Bouton automatique
-const buttonAuto = document.getElementById('auto');
 
 buttonAuto.addEventListener('click', function(event) {
     // - On  désactive le mode auto
-    onAuto = true; 
-    feuAuto();
+    if (onAuto != true) {
+        onAuto = true; 
+        feuAuto();
+
+        // - Ajouter et supprimer la class active des bouttons
+        buttonAuto.classList.add("active");
+        buttonNext.classList.remove("active");
+    }
+    
 });
