@@ -52,6 +52,7 @@ let seconde = 0;
 let onAuto = new Boolean(true);
 
 function feuAuto() {
+    
     let nvCouleur = tabFeu[0]; // On enregistre la première valeur
 
     if (onAuto) {
@@ -85,3 +86,11 @@ buttonNext.addEventListener('click', function(event) {
 });
 
 
+// 5 - Bouton automatique
+const buttonAuto = document.getElementById('auto');
+
+buttonAuto.addEventListener('click', function(event) {
+    // - On  désactive le mode auto
+    onAuto = true; 
+    feuAuto();
+});
