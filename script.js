@@ -48,19 +48,16 @@ function feuAttribuer() {
 
 // 3 - Fonctionnement automatique du feu
 let tabFeu = ["1", "2", "3"];
-
-let timer = 0;
 let seconde = 0;
+let onAuto = new Boolean(true);
 
 function feuAuto() {
     let nvCouleur = tabFeu[0]; // On enregistre la première valeur
 
-    if (timer < 1) {
+    if (onAuto) {
         tabFeu.shift(); // On supprime la première valeur
         tabFeu.push(nvCouleur); // On réinsert la première valeur à la fin
         seconde = setTimeout("feuAuto()", 2000);
-    } else {
-        clearTimeout(seconde);
     }
     
     activeCouleur();
@@ -70,12 +67,21 @@ function feuAuto() {
 feuAuto();
 
 
-// 4 - Ajout d'un bouton manuel
+// 4 - Bouton manuel 
 const buttonNext = document.getElementById('next');
 
 buttonNext.addEventListener('click', function(event) {
-    let nvCouleur = tabFeu[0]; // On enregistre la première valeur
-    
-    tabFeu.shift(); // On supprime la première valeur
-    tabFeu.push(nvCouleur); // On réinsert la première valeur à la fin
+    // - On  désactive le mode auto
+    onAuto = false; 
+
+    // - On passe à la valeur suivante dans le tableau
+    let nvCouleur = tabFeu[0];
+    tabFeu.shift();
+    tabFeu.push(nvCouleur);
+
+    // - On réactive les fonctions
+    activeCouleur();
+    feuAttribuer();
 });
+
+
